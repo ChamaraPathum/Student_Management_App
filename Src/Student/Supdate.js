@@ -13,34 +13,37 @@ const Supdate = ({ route }) => {
   const sid = route.params.id;
   const name = route.params.name;
   const address = route.params.address;
-  const date = route.params.date;
   const course = route.params.course;
-  const image = route.params.image;
+  const date = route.params.date;
+
 
   const [std_name, setStd_name] = useState(name);
   const [std_address, setStd_address] = useState(address);
-  const [std_reg_date, setStd_reg_date] = useState(date);
   const [std_course, setStd_course] = useState(course);
-  const [std_image, setStd_image] = useState(image);
+  const [std_reg_date, setStd_reg_date] = useState(date);
+
+ 
+
 
   const Navigation = useNavigation("");
 
   console.log(name);
   console.log(sid);
   console.log(address);
-  console.log(date);
   console.log(course);
+  console.log(date);
 
   const onPress = async () => {
-    fetch("http://192.168.1.100:5000/students/" + sid, {
+    fetch("http://192.168.43.227:5000/students/" + sid, {
       method: "PUT",
       body: JSON.stringify({
         std_id: sid,
         std_name: std_name,
         std_address: std_address,
-        std_reg_date: std_reg_date,
         std_course: std_course,
-        std_image: std_image,
+        std_reg_date: std_reg_date,
+        
+      
       }),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
@@ -55,7 +58,7 @@ const Supdate = ({ route }) => {
   return (
     <View>
       <ImageBackground
-        source={require("../images/background.jpg")}
+        source={require("../images/greenbackground.png")}
         style={{ height: "100%" }}
       >
  {/* ////////////////////Header ID///////////////////////    */}
@@ -64,9 +67,9 @@ const Supdate = ({ route }) => {
             textAlign: "center",
             fontSize: 20,
             fontWeight: "bold",
-            color: "white",
+            color: "gray",
             marginTop: "3.5%",
-            borderColor: "white",
+            borderColor: "gray",
             borderWidth: 2,
             width: 150,
             marginLeft: "32%",
@@ -75,8 +78,10 @@ const Supdate = ({ route }) => {
           Student ID: {sid}
         </Text>
 
-        <Text style={{fontStyle:'italic',textAlign:'center',marginTop:'3%',fontSize:18,color:"#a5b6c4"}}>You can change the details</Text>
+        <Text style={{fontStyle:'italic',textAlign:'center',marginTop:'3%',fontSize:18,color:"gray"}}>You can change the details</Text>
 {/* ///////////////////////////////////////////////////////// */}
+
+
 
 {/* //////////////////////Txt Input///////////////////////////////// */}
         <TextInput
@@ -109,22 +114,7 @@ const Supdate = ({ route }) => {
           mode="flat"
         />
 
-        <TextInput
-          style={{
-            marginTop: "5%",
-            width: "70%",
-            marginLeft: "15%",
-            backgroundColor: "#fff",
-            fontWeight:'bold',
-            fontSize:17
-          }}
-          label="Register date:"
-          value={std_reg_date}
-          onChangeText={(text) => setStd_reg_date(text)}
-          mode="flat"
-        />
-
-        <TextInput
+     <TextInput
           style={{
             marginTop: "5%",
             width: "70%",
@@ -138,8 +128,7 @@ const Supdate = ({ route }) => {
           onChangeText={(text) => setStd_course(text)}
           mode="flat"
         />
-
-        <TextInput
+   <TextInput
           style={{
             marginTop: "5%",
             width: "70%",
@@ -148,11 +137,12 @@ const Supdate = ({ route }) => {
             fontWeight:'bold',
             fontSize:17
           }}
-          label="Image:"
-          value={std_image}
-          onChangeText={(text) => setStd_image(text)}
+          label="Register date:"
+          value={std_reg_date}
+          onChangeText={(text) => setStd_reg_date(text)}
           mode="flat"
         />
+ 
 
 {/* /////////////////Btn Add//////////////////////////////////////////// */}
         <Button

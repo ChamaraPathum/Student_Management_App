@@ -8,30 +8,34 @@ import Uadd from "./User/Uadd";
 import Supdate from "./Student/Supdate";
 import Uupdate from "./User/Uupdate";
 import DrawerNav from "./DrawerNav";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 const Stack = createNativeStackNavigator();
 
 const Router = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          options={{ headerShown: false }}
-          name="Login"
-          component={Login}
-        />
-        <Stack.Screen
-          options={{ headerShown: false }}
-          name="DrawerNav"
-          component={DrawerNav}
-        />
-        <Stack.Screen name="Home" component={List} />
-        <Stack.Screen name="Add Student" component={Sadd} />
-        <Stack.Screen name="Edit Student" component={Supdate} />
-        <Stack.Screen name="Add User" component={Uadd} />
-        <Stack.Screen name="Edit User" component={Uupdate} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            options={{ headerShown: false }}
+            name="Login"
+            component={Login}
+          />
+          <Stack.Screen
+            options={{ headerShown: false }}
+            name="DrawerNav"
+            component={DrawerNav}
+          />
+
+          <Stack.Screen name="Home" component={List} />
+          <Stack.Screen name="Add Student" component={Sadd} />
+          <Stack.Screen name="Edit Student" component={Supdate} />
+          <Stack.Screen name="Add User" component={Uadd} />
+          <Stack.Screen name="Edit User" component={Uupdate} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 };
 

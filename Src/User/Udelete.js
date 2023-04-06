@@ -4,10 +4,14 @@ import { TextInput, Button } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
 
 const Udelete = () => {
+
   const onPress = () => {
-    fetch("http://192.168.1.100:5000/users/" + user_id, {
+   
+    fetch("http://192.168.43.227:5000/users/" + user_id, {
       method: "DELETE",
-    });
+      
+    })
+ 
   };
 
   const navigation = useNavigation();

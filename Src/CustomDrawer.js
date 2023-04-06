@@ -1,4 +1,4 @@
-import { View, Text, ImageBackground,Image } from "react-native";
+import { View, Text, ImageBackground, Image } from "react-native";
 import React from "react";
 import {
   DrawerContentScrollView,
@@ -12,12 +12,26 @@ export default function CustomDrawer(props) {
         {...props}
         contentContainerStyle={{ backgroundColor: "#fff" }}
       >
-        <ImageBackground source={require('./images/customDrawer.png')} style={{padding:30,marginTop:'-5%',height:160}}>
-            <Image source={require('./images/My.jpeg')} style={{width:130,height:130,borderRadius:100,marginLeft:'20%',marginTop:'20%',borderWidth:2,borderColor:'white'}}/>
+        <ImageBackground
+          source={require("./images/customDrawer.png")}
+          style={{ padding: 30, marginTop: "-5%", height: 160 }}
+        >
+          <Image
+            source={require("./images/My.jpeg")}
+            style={{
+              width: 130,
+              height: 130,
+              borderRadius: 100,
+              marginLeft: "20%",
+              marginTop: "20%",
+              borderWidth: 2,
+              borderColor: "white",
+            }}
+          />
         </ImageBackground>
 
-        <View style={{marginTop:60,padding:2}}>
-        <DrawerItemList {...props}></DrawerItemList>
+        <View style={{ marginTop: 60, padding: 2 }}>
+          <DrawerItemList {...props}></DrawerItemList>
         </View>
       </DrawerContentScrollView>
 

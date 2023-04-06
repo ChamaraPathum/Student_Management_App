@@ -15,7 +15,7 @@ const StdGet = () => {
   const [deta, setDeta] = useState([]);
 
   const onpress = () => {
-    fetch("http://192.168.1.101:5000/student" +std_id)
+    fetch("http://192.168.43.227:5000/student" +std_id)
       .then((response) => response.json())
       .then((json) => {
         json.map((val) => {

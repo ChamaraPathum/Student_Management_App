@@ -18,7 +18,7 @@ const Uadd = () => {
   const [user_password, setUser_password] = useState("");
 
   const onPress = () => {
-    fetch("http://192.168.1.100:5000/users", {
+    fetch("http://192.168.43.227:5000/users", {
       method: "POST",
       body: JSON.stringify({
         user_id: user_id,
@@ -39,7 +39,7 @@ const Uadd = () => {
   return (
     <View>
       <ImageBackground
-        source={require("../images/background.jpg")}
+        source={require("../images/Nback.png")}
         style={{ height: "100%" }}
       >
         <Image

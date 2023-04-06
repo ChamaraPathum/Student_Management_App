@@ -22,7 +22,7 @@ const Uupdate = ({ route }) => {
   const Navigation = useNavigation("");
 
   const onPress = () => {
-    fetch("http://192.168.1.100:5000/users/" + id, {
+    fetch("http://192.168.43.227:5000/users/" + id, {
       method: "PUT",
       body: JSON.stringify({
         user_id: id,
@@ -34,32 +34,33 @@ const Uupdate = ({ route }) => {
         "Content-type": "application/json; charset=UTF-8",
       },
     })
-      .then((response) => response.json(Alert.alert("Succussfull","User Saved Succussfully")))
+      .then((response) =>
+        response.json(Alert.alert("Succussfull", "User Saved Succussfully"))
+      )
       .then((json) => console.log(json));
   };
 
   return (
     <View>
       <ImageBackground
-        source={require("../images/background.jpg")}
+        source={require("../images/greenbackground.png")}
         style={{ height: "100%" }}
       >
-
-{/* //////////////////////////Headr ID/////////////////////////////////////////         */}
+        {/* //////////////////////////Headr ID/////////////////////////////////////////         */}
         <Text
           style={{
             textAlign: "center",
             fontSize: 20,
             fontWeight: "bold",
-            color: "white",
+            color: "gray",
             marginTop: "3.5%",
-            borderColor: "white",
+            borderColor: "gray",
             borderWidth: 2,
             width: 150,
             marginLeft: "32%",
           }}
         >
-          Student ID: {id}
+          User ID: {id}
         </Text>
 
         <Text
@@ -68,20 +69,20 @@ const Uupdate = ({ route }) => {
             textAlign: "center",
             marginTop: "3%",
             fontSize: 18,
-            color: "#a5b6c4",
+            color: "gray",
           }}
         >
           You can change the details
         </Text>
-{/* ///////////////////////txt input add/////////////////////////////////////////// */}
+        {/* ///////////////////////txt input add/////////////////////////////////////////// */}
         <TextInput
           style={{
             marginTop: "5%",
             width: "70%",
             marginLeft: "15%",
             backgroundColor: "#fff",
-            fontWeight:'bold',
-            fontSize:17
+            fontWeight: "bold",
+            fontSize: 17,
           }}
           label="New User Name:"
           value={user_name}
@@ -95,8 +96,8 @@ const Uupdate = ({ route }) => {
             width: "70%",
             marginLeft: "15%",
             backgroundColor: "#fff",
-            fontWeight:'bold',
-            fontSize:17
+            fontWeight: "bold",
+            fontSize: 17,
           }}
           label="New User email:"
           value={user_email}
@@ -110,8 +111,8 @@ const Uupdate = ({ route }) => {
             width: "70%",
             marginLeft: "15%",
             backgroundColor: "#fff",
-            fontWeight:'bold',
-            fontSize:17
+            fontWeight: "bold",
+            fontSize: 17,
           }}
           label="New User Password:"
           value={user_password}

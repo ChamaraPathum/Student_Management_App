@@ -1,4 +1,3 @@
-import { View, Text, ImageBackground } from "react-native";
 import React from "react";
 import List from "./Student/List";
 import { createDrawerNavigator } from "@react-navigation/drawer";
@@ -9,9 +8,9 @@ const Drawer = createDrawerNavigator();
 
 export default function DrawerNav() {
   return (
-    <Drawer.Navigator  
-    drawerContent={props=><CustomDrawer {...props}/>} >
+    <Drawer.Navigator drawerContent={(props) => <CustomDrawer {...props} />}>
       <Drawer.Screen name="Home" component={List} />
+
       <Drawer.Screen name="User" component={User} />
     </Drawer.Navigator>
   );
