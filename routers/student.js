@@ -10,8 +10,8 @@ router.post("/", (req, res) => {
       req.body.std_id,
       req.body.std_name,
       req.body.std_address,
-      req.body.std_reg_date,
       req.body.std_course,
+      req.body.std_reg_date,
     ],
     (err, rows) => {
       console.log("student post");
