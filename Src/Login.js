@@ -12,7 +12,6 @@ import { TextInput } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
 import Feather from "react-native-vector-icons/Feather";
 
-
 const Login = () => {
   const navigation = useNavigation();
   const [text, setText] = React.useState("");
@@ -89,6 +88,7 @@ const Login = () => {
         >
           or
         </Text>
+
         <View style={{ flex: 1, flexDirection: "row" }}>
           <TouchableOpacity>
             <View style={{ flex: 1, marginLeft: "19%" }}>
@@ -98,6 +98,7 @@ const Login = () => {
               />
             </View>
           </TouchableOpacity>
+
           <TouchableOpacity>
             <View style={{ flex: 2, marginLeft: "-12%" }}>
               <Image
@@ -106,6 +107,7 @@ const Login = () => {
               />
             </View>
           </TouchableOpacity>
+
           <TouchableOpacity>
             <View style={{ flex: 1, marginLeft: "-8%" }}>
               <Image

@@ -21,7 +21,6 @@ const Sadd = () => {
   const [std_course, setStd_course] = useState("");
   const [std_reg_date, setStd_reg_date] = useState("");
 
-
   const onPress = () => {
     fetch("http://192.168.43.227:5000/students", {
       method: "POST",
@@ -31,7 +30,6 @@ const Sadd = () => {
         std_address: std_address,
         std_course: std_course,
         std_reg_date: std_reg_date,
-     
       }),
       headers: {
         "Content-type": "application/json; charset=UTF-8",

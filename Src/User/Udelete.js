@@ -1,17 +1,13 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity,StyleSheet} from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { TextInput, Button } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
 
 const Udelete = () => {
-
   const onPress = () => {
-   
     fetch("http://192.168.43.227:5000/users/" + user_id, {
       method: "DELETE",
-      
-    })
- 
+    });
   };
 
   const navigation = useNavigation();
@@ -34,21 +30,21 @@ const Udelete = () => {
 };
 
 const styles = StyleSheet.create({
-    Uid: {
-      width: "60%",
-      marginLeft: "20%",
-      marginTop: "10%",
-      fontWeight: "bold",
-      backgroundColor:"#ff3d74",
-    },
-  
-    Ubtn: {
-      width: "24%",
-      marginLeft: "38%",
-      marginTop: "5%",
-      backgroundColor: "red",
-      fontWeight: "bold",
-    },
-  });
+  Uid: {
+    width: "60%",
+    marginLeft: "20%",
+    marginTop: "10%",
+    fontWeight: "bold",
+    backgroundColor: "#ff3d74",
+  },
+
+  Ubtn: {
+    width: "24%",
+    marginLeft: "38%",
+    marginTop: "5%",
+    backgroundColor: "red",
+    fontWeight: "bold",
+  },
+});
 
 export default Udelete;

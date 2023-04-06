@@ -16,14 +16,10 @@ const Supdate = ({ route }) => {
   const course = route.params.course;
   const date = route.params.date;
 
-
   const [std_name, setStd_name] = useState(name);
   const [std_address, setStd_address] = useState(address);
   const [std_course, setStd_course] = useState(course);
   const [std_reg_date, setStd_reg_date] = useState(date);
-
- 
-
 
   const Navigation = useNavigation("");
 
@@ -42,8 +38,6 @@ const Supdate = ({ route }) => {
         std_address: std_address,
         std_course: std_course,
         std_reg_date: std_reg_date,
-        
-      
       }),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
@@ -61,7 +55,7 @@ const Supdate = ({ route }) => {
         source={require("../images/greenbackground.png")}
         style={{ height: "100%" }}
       >
- {/* ////////////////////Header ID///////////////////////    */}
+        {/* ////////////////////Header ID///////////////////////    */}
         <Text
           style={{
             textAlign: "center",
@@ -78,20 +72,28 @@ const Supdate = ({ route }) => {
           Student ID: {sid}
         </Text>
 
-        <Text style={{fontStyle:'italic',textAlign:'center',marginTop:'3%',fontSize:18,color:"gray"}}>You can change the details</Text>
-{/* ///////////////////////////////////////////////////////// */}
+        <Text
+          style={{
+            fontStyle: "italic",
+            textAlign: "center",
+            marginTop: "3%",
+            fontSize: 18,
+            color: "gray",
+          }}
+        >
+          You can change the details
+        </Text>
+        {/* ///////////////////////////////////////////////////////// */}
 
-
-
-{/* //////////////////////Txt Input///////////////////////////////// */}
+        {/* //////////////////////Txt Input///////////////////////////////// */}
         <TextInput
           style={{
             marginTop: "5%",
             width: "70%",
             marginLeft: "15%",
             backgroundColor: "#fff",
-            fontWeight:'bold',
-            fontSize:17
+            fontWeight: "bold",
+            fontSize: 17,
           }}
           label="Student Name:"
           value={std_name}
@@ -105,8 +107,8 @@ const Supdate = ({ route }) => {
             width: "70%",
             marginLeft: "15%",
             backgroundColor: "#fff",
-            fontWeight:'bold',
-            fontSize:17
+            fontWeight: "bold",
+            fontSize: 17,
           }}
           label="New Student address:"
           value={std_address}
@@ -114,37 +116,36 @@ const Supdate = ({ route }) => {
           mode="flat"
         />
 
-     <TextInput
+        <TextInput
           style={{
             marginTop: "5%",
             width: "70%",
             marginLeft: "15%",
             backgroundColor: "#fff",
-            fontWeight:'bold',
-            fontSize:17
+            fontWeight: "bold",
+            fontSize: 17,
           }}
           label="Course:"
           value={std_course}
           onChangeText={(text) => setStd_course(text)}
           mode="flat"
         />
-   <TextInput
+        <TextInput
           style={{
             marginTop: "5%",
             width: "70%",
             marginLeft: "15%",
             backgroundColor: "#fff",
-            fontWeight:'bold',
-            fontSize:17
+            fontWeight: "bold",
+            fontSize: 17,
           }}
           label="Register date:"
           value={std_reg_date}
           onChangeText={(text) => setStd_reg_date(text)}
           mode="flat"
         />
- 
 
-{/* /////////////////Btn Add//////////////////////////////////////////// */}
+        {/* /////////////////Btn Add//////////////////////////////////////////// */}
         <Button
           style={{ width: "30%", marginTop: "5%", marginLeft: "15%" }}
           mode="contained-tonal"
@@ -171,7 +172,6 @@ const Supdate = ({ route }) => {
             Back to Home...
           </Text>
         </TouchableOpacity>
-
       </ImageBackground>
     </View>
   );

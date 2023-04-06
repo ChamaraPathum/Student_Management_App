@@ -45,7 +45,12 @@ const User = () => {
         style={{ height: "100%" }}
       >
         <Searchbar
-          style={{ marginLeft: "5%", width: "70%", marginTop: "2%",backgroundColor:'#f1fac0' }}
+          style={{
+            marginLeft: "5%",
+            width: "70%",
+            marginTop: "2%",
+            backgroundColor: "#f1fac0",
+          }}
           placeholder="Search By ID"
           onChangeText={onChangeSearch}
           value={searchQuery}

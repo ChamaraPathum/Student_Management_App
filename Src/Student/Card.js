@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { Card, Text } from 'react-native-paper';
+import * as React from "react";
+import { Card, Text } from "react-native-paper";
 
 const MyComponent = () => (
   <Card>
