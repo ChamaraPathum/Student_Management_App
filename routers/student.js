@@ -5,14 +5,13 @@ var connection = require("../db");
 //-----add student-----------------------
 router.post("/", (req, res) => {
   connection.query(
-    "INSERT INTO student VALUES(?,?,?,?,?,?)",
+    "INSERT INTO student VALUES(?,?,?,?,?)",
     [
       req.body.std_id,
       req.body.std_name,
       req.body.std_address,
       req.body.std_reg_date,
       req.body.std_course,
-      req.body.std_image,
     ],
     (err, rows) => {
       console.log("student post");
@@ -26,7 +25,7 @@ router.post("/", (req, res) => {
 //---------get student by id------------------
 router.get("/:std_id", (req, res) => {
   connection.query(
-    "SELECT std_name,std_address,std_reg_date,std_course,std_image from student where std_id=?",
+    "SELECT std_name,std_address,std_course,std_reg_date, from student where std_id=?",
     [req.params.std_id],
     (err, rows) => {
       console.log("student get by id");
@@ -43,8 +42,6 @@ router.get("/", (req, res) => {
     "SELECT * FROM student ",
 
     (err, rows) => {
-     
-
       if (err) throw err;
       res.json(rows);
     }
@@ -54,13 +51,12 @@ router.get("/", (req, res) => {
 //---------update students----------------------
 router.put("/:std_id", (req, res) => {
   connection.query(
-    "UPDATE student set std_name=?,std_address=?,std_reg_date=?,std_course=?,std_image=? where std_id=?",
+    "UPDATE student set std_name=?,std_address=?,std_course=?,std_reg_date=?, where std_id=?",
     [
       req.body.std_name,
       req.body.std_address,
-      req.body.std_reg_date,
       req.body.std_course,
-      req.body.std_image,
+      req.body.std_reg_date,
       req.params.std_id,
     ],
     (err, rows) => {
@@ -74,17 +70,17 @@ router.put("/:std_id", (req, res) => {
 
 //-----delete student----------------------------
 router.delete("/:std_id", (req, res) => {
-    connection.query(
-      "DELETE from student where std_id=? ",
-      [req.params.std_id],
-  
-      (err, rows) => {
-        console.log("Delete student");
-  
-        if (err) throw err;
-        res.json(rows);
-      }
-    );
-  });
+  connection.query(
+    "DELETE from student where std_id=? ",
+    [req.params.std_id],
+
+    (err, rows) => {
+      console.log("Delete student");
+
+      if (err) throw err;
+      res.json(rows);
+    }
+  );
+});
 
 module.exports = router;
